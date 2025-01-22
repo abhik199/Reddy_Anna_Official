@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import logo from '../image/logo.jpg';
 const Navbar = () => {
@@ -15,12 +15,12 @@ const Navbar = () => {
       <img src={logo} alt="logo" />
       </div>
       <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
+        <li><Link to="home">HOME</Link></li>
+        <li><Link to="service">Service</Link></li>
         <li><a href="#">Platforms</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Sports ID</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><Link to="about">About Us</Link></li>
+        <li><Link to="sport">Sports ID</Link> </li>
+        <li><Link to="contact">Contact</Link> </li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">Rules</a></li>
 
