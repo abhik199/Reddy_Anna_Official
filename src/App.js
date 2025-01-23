@@ -5,6 +5,9 @@ import Service from "./component/Service";
 import About from "./component/About";
 import Sport from "./component/Sport";
 import Contact from "./component/Contact";
+import Policy from "./component/Policy";
+import TermsAndConditions from "./component/TermsAndConditions";
+import Disclaimer from "./component/Disclaimer";
 
 const App =()=> {
   return (
@@ -19,6 +22,9 @@ const App =()=> {
               <Route path="about" element={<About/>}/>
               <Route path="sport" element={<Sport/>}/>
               <Route path="contact" element={<Contact/>}/>
+              <Route path="policy" element={<Policy/>}/>
+              <Route path="termsAndcondition" element={<TermsAndConditions/>}/>
+              <Route path="disclaimer" element={<Disclaimer/>}/>
 
             </Route>
         </Routes>

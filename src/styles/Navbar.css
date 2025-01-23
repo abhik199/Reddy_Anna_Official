@@ -46,7 +46,8 @@
   .nav-links a:hover {
     color: #f39c12;
   }
-  
+  /* Submenu Styles */
+ 
   /* Hamburger menu */
   .hamburger {
     display: none;
@@ -58,8 +59,9 @@
   }
   
   .hamburger .bar {
-    height: 4px;
+    height: 3px;
     width: 100%;
+    color: #f39c12;
     background-color: white;
   }
   
@@ -85,4 +87,5 @@
       display: flex;
     }
   }
+  
   
