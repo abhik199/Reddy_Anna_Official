@@ -8,6 +8,12 @@ import Contact from "./component/Contact";
 import Policy from "./component/Policy";
 import TermsAndConditions from "./component/TermsAndConditions";
 import Disclaimer from "./component/Disclaimer";
+import Cricket from "./service_componet/Cricket";
+import Football from "./service_componet/Football";
+import Tennis from "./service_componet/Tennis";
+import Horse_race from "./service_componet/Horse_race";
+import India_card from "./service_componet/Indian_Card";
+import Casino from "./service_componet/Casino";
 
 const App =()=> {
   return (
@@ -25,6 +31,15 @@ const App =()=> {
               <Route path="policy" element={<Policy/>}/>
               <Route path="termsAndcondition" element={<TermsAndConditions/>}/>
               <Route path="disclaimer" element={<Disclaimer/>}/>
+              <Route path="cricket" element={<Cricket/>}/>
+              <Route path="football" element={<Football/>}/>
+              <Route path="tennis" element={<Tennis/>}/>
+              <Route path="horseRace" element={<Horse_race/>}/>
+              <Route path="indianCard" element={<India_card/>}/>
+              <Route path="casino" element={<Casino/>}/>
+
+
+
 
             </Route>
         </Routes>

@@ -15,6 +15,8 @@ const Navbar = () => {
     setSubmenuOpen(!submenuOpen);
   };
 
+ 
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -28,6 +30,7 @@ const Navbar = () => {
         <li><Link to="sport">Sports ID</Link></li>
         <li><Link to="contact">Contact</Link></li>
         <li><a href="#">Blog</a></li>
+        
         <li 
           className="submenu-container" 
           onMouseEnter={toggleSubmenu} 
@@ -43,6 +46,7 @@ const Navbar = () => {
           )}
         </li>
       </ul>
+
       <div className="hamburger" onClick={toggleMenu}>
         <div className="bar"></div>
         <div className="bar"></div>
