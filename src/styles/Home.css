@@ -37,6 +37,7 @@ body
   .welcome-content h1 {
     font-size: 40px;
     color: goldenrod;
+    text-align: left;
   }
   
   .welcome-content h2 {
