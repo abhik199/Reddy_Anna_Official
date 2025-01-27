@@ -1,19 +1,39 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/Navbar.css';
-import logo from '../image/logo.png';
+
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
+import logo from "../image/logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState({ service: false, platforms: false, rules: false });
 
+  // Toggle menu open/close
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Toggle submenu open/close (updated for mobile support)
   const toggleSubmenu = (submenu) => {
-    setSubmenuOpen((prev) => ({ ...prev, [submenu]: !prev[submenu] }));
+    setSubmenuOpen((prev) => ({
+      ...prev,
+      [submenu]: !prev[submenu],
+    }));
   };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".navbar") && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <div className="navbar-container">
@@ -21,11 +41,18 @@ const Navbar = () => {
         <div className="logo">
           <img src={logo} alt="logo" />
         </div>
-        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <li><Link to="home">HOME</Link></li>
 
-          <li className="submenu-container" onMouseEnter={() => toggleSubmenu('service')} onMouseLeave={() => toggleSubmenu('service')}>
-            <Link to="service">Service</Link >
+        {/* Navigation Links */}
+        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <li>
+            <Link to="home">HOME</Link>
+          </li>
+
+          {/* Service Dropdown */}
+          <li className="submenu-container">
+            <button className="submenu-toggle" onClick={() => toggleSubmenu("service")}>
+              Service ▾
+            </button>
             {submenuOpen.service && (
               <ul className="submenu">
                 <li><Link to="reddyAnnalogin">Reddy Anna Login</Link></li>
@@ -35,13 +62,15 @@ const Navbar = () => {
                 <li><Link to="tennis">Tennis Betting</Link></li>
                 <li><Link to="indianCard">Indian Card Games</Link></li>
                 <li><Link to="casino">Casino</Link></li>
-
               </ul>
             )}
           </li>
 
-          <li className="submenu-container" onMouseEnter={() => toggleSubmenu('platforms')} onMouseLeave={() => toggleSubmenu('platforms')}>
-            <a href="#">Platforms</a>
+          {/* Platforms Dropdown */}
+          <li className="submenu-container">
+            <button className="submenu-toggle" onClick={() => toggleSubmenu("platforms")}>
+              Platforms ▾
+            </button>
             {submenuOpen.platforms && (
               <ul className="submenu">
                 <li><Link to="android">Android</Link></li>
@@ -56,8 +85,11 @@ const Navbar = () => {
           <li><Link to="contact">Contact</Link></li>
           <li><a href="#">Blog</a></li>
 
-          <li className="submenu-container" onMouseEnter={() => toggleSubmenu('rules')} onMouseLeave={() => toggleSubmenu('rules')}>
-            <a href="#">Rules</a>
+          {/* Rules Dropdown */}
+          <li className="submenu-container">
+            <button className="submenu-toggle" onClick={() => toggleSubmenu("rules")}>
+              Rules ▾
+            </button>
             {submenuOpen.rules && (
               <ul className="submenu">
                 <li><Link to="policy">Privacy Policy</Link></li>
@@ -68,11 +100,15 @@ const Navbar = () => {
           </li>
         </ul>
 
+        {/* Hamburger Icon for Mobile */}
         <div className="hamburger" onClick={toggleMenu}>
           <div className="bar"></div>
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
+
+        {/* Overlay to close menu on click */}
+        {menuOpen && <div className="overlay" onClick={() => setMenuOpen(false)} />}
       </nav>
     </div>
   );
