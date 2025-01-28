@@ -15,6 +15,7 @@ import Horse_race from "./service_componet/Horse_race";
 import India_card from "./service_componet/Indian_Card";
 import Casino from "./service_componet/Casino";
 import ReddyAnnaLogin from "./service_componet/ReddyAnnaLogin";
+import Blog from "./component/Blog";
 
 const App =()=> {
   return (
@@ -39,6 +40,8 @@ const App =()=> {
               <Route path="indianCard" element={<India_card/>}/>
               <Route path="casino" element={<Casino/>}/>
               <Route path="reddyAnnalogin" element={<ReddyAnnaLogin/>}/>
+              <Route path="blog" element={<Blog/>}/>
+
 
 
 

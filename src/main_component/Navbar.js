@@ -83,7 +83,7 @@ const Navbar = () => {
           <li><Link to="about">About Us</Link></li>
           <li><Link to="sport">Sports ID</Link></li>
           <li><Link to="contact">Contact</Link></li>
-          <li><a href="#">Blog</a></li>
+          <li><Link to="blog">Blog</Link></li>
 
           {/* Rules Dropdown */}
           <li className="submenu-container">
