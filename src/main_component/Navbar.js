@@ -50,9 +50,9 @@ const Navbar = () => {
 
           {/* Service Dropdown */}
           <li className="submenu-container">
-            <button className="submenu-toggle" onClick={() => toggleSubmenu("service")}>
+            <Link to="service"><button className="submenu-toggle" onClick={() => toggleSubmenu("service")}>
               Service ▾
-            </button>
+            </button></Link>
             {submenuOpen.service && (
               <ul className="submenu">
                 <li><Link to="reddyAnnalogin">Reddy Anna Login</Link></li>
