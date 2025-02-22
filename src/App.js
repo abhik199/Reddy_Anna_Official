@@ -16,6 +16,15 @@ import India_card from "./service_componet/Indian_Card";
 import Casino from "./service_componet/Casino";
 import ReddyAnnaLogin from "./service_componet/ReddyAnnaLogin";
 import Blog from "./component/Blog";
+// ✅ Admin Panel
+import AdminLayout from "./AdminPannel/AdminComponent/AdminLayout";
+import Login from "./AdminPannel/AdminComponent/Login";
+import AdminDashboard from "./AdminPannel/AdminComponent/AdminDashboard";
+import ProtectedRoute from "./AdminPannel/AdminComponent/ProtectedRoute";
+import BlogerForm from "./AdminPannel/AdminComponent/BlogerForm";
+import HomeBlogForm from "./AdminPannel/AdminComponent/HomeBlogFrom";
+import UserInfoTable from "./AdminPannel/AdminComponent/UserInfoTable";
+
 
 const App =()=> {
   return (
@@ -41,10 +50,21 @@ const App =()=> {
               <Route path="casino" element={<Casino/>}/>
               <Route path="reddyAnnalogin" element={<ReddyAnnaLogin/>}/>
               <Route path="blog" element={<Blog/>}/>
+            </Route>
 
+            {/* ✅ Login Page */}
+            <Route path="/login" element={<Login />} />
 
-
-
+            {/* ✅ Admin Panel Pages (Sidebar + Navbar Fixed) */}
+            <Route path="/admin" element={
+            <ProtectedRoute>
+            <AdminLayout />
+            </ProtectedRoute>
+            }>
+            <Route index element={<AdminDashboard />} />
+            <Route path="/admin/blogerForm" element={<BlogerForm />} />
+            <Route path="/admin/homeBlogForm" element={<HomeBlogForm />} />
+            <Route path="/admin/userInfo" element={<UserInfoTable />} />
 
 
 
