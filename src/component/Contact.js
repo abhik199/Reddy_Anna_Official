@@ -38,17 +38,11 @@ const Contact=()=>{
           <input type="text" placeholder="Phone" />
         </div>
         <div className="form-row">
-          <select>
-            <option value="">Position</option>
-            <option value="developer">Developer</option>
-            <option value="designer">Designer</option>
-            <option value="manager">Manager</option>
-          </select>
+        <input type="text" placeholder="Message" />
+
           <input type="date" placeholder="Start Date" />
         </div>
-        <div className="form-row">
-          <input type="url" placeholder="Link to CV/LinkedIn" />
-        </div>
+        
         <center><button className='submit_btn' type="submit">Apply Now</button></center>
       </form>
     </div>

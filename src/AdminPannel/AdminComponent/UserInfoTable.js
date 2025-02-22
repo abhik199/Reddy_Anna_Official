@@ -28,9 +28,8 @@ const UserInfoTable = () => {
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Position</th>
-            <th>Start Date</th>
-            <th>CV Link</th>
+            <th>Message</th>
+            <th>Message Date</th>
           </tr>
         </thead>
         <tbody>
@@ -40,9 +39,8 @@ const UserInfoTable = () => {
               <td>{user.first_name} {user.last_name}</td>
               <td>{user.email}</td>
               <td>{user.phone}</td>
-              <td>{user.position}</td>
-              <td>{user.start_date}</td>
-              <td><a href={user.cv_link} target="_blank" rel="noopener noreferrer">View</a></td>
+              <td>{user.message}</td>
+              <td>{user.message_date}</td>
             </tr>
           ))}
         </tbody>
