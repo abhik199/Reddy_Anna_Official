@@ -1,120 +1,59 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../styles/Blog.css";
-import b1_img from "../image/blog1.webp";
-import b2_img from "../image/blog2.webp";
-import b3_img from "../image/blog3.webp";
-
 
 const Blog = () => {
+  const [blogs, setBlogs] = useState([]);
+  const [filteredBlogs, setFilteredBlogs] = useState([]);
+  const [category, setCategory] = useState("All Posts");
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/Blogs")
+      .then(response => {
+        setBlogs(response.data);
+        setFilteredBlogs(response.data);
+      })
+      .catch(error => console.error("Error fetching blogs:", error));
+  }, []);
+
+  const handleFilter = (category) => {
+    setCategory(category);
+    if (category === "All Posts") {
+      setFilteredBlogs(blogs);
+    } else {
+      setFilteredBlogs(blogs.filter(blog => blog.category === category));
+    }
+  };
+
   return (
     <div className="blog-container">
       {/* Navigation Menu */}
       <nav className="blog-menu">
         <ul>
-          <li><a href="#">All Posts</a></li>
-          <li><a href="#">Cricket</a></li>
-          <li><a href="#">Football</a></li>
-          <li><a href="#">All Sports</a></li>
-          <li><a href="#">Match Predictions</a></li>
-          <li><a href="#">More</a></li>
+          <li><button onClick={() => handleFilter("All Posts")}>All Posts</button></li>
+          <li><button onClick={() => handleFilter("Cricket")}>Cricket</button></li>
+          <li><button onClick={() => handleFilter("Football")}>Football</button></li>
+          <li><button onClick={() => handleFilter("All Sports")}>All Sports</button></li>
+          <li><button onClick={() => handleFilter("Match Predictions")}>Match Predictions</button></li>
+          <li><button onClick={() => handleFilter("Casino")}>Casino</button></li>
         </ul>
       </nav>
       
-      {/* Match Card */}
-      <div className="blog-match-card">
-        {/* Left Side - Image */}
-        <div className="blog-match-card-image">
-          <img
-            src={b1_img}
-            alt="Match Preview"
-          />
-          <div className="date-tag">28 JAN</div>
-          <div className="time-tag">9:00 PM</div>
+      {/* Blogs */}
+      {filteredBlogs.map((blog, index) => (
+        <div key={index} className="blog-match-card">
+          <div className="blog-match-card-image">
+            <img src={blog.image} alt={blog.title} />
+            <div className="date-tag">{blog.date}</div>
+          </div>
+          <div className="blog-match-card-content">
+            <h2 className="blog-card-heading">{blog.title}</h2>
+            <p className="blog-card-paragraph">{blog.description}</p>
+            <div className="blog-match-card-footer">Category: {blog.category}</div>
+          </div>
         </div>
-
-        {/* Right Side - Content */}
-        <div className="blog-match-card-content">
-          <h2 className="blog-card-heading">
-            Pretoria Capitals vs Joburg Super Kings, SA20, Today Match Prediction
-          </h2>
-          <p className="blog-card-paragraph">
-          PC vs JSK Betting Tips and Match Analysis The SA20 2025 is heating up, and the Pretoria Capitals are in a do-or-die situation as they..          
-          </p>
-          <div className="blog-match-card-footer">1 view • 0 comments</div>
-        </div>
-      </div>
-
-      <div className="blog-match-card">
-        {/* Left Side - Image */}
-        <div className="blog-match-card-image">
-          <img
-            src={b2_img}
-            alt="Match Preview"
-          />
-          <div className="date-tag">28 JAN</div>
-          <div className="time-tag">9:00 PM</div>
-        </div>
-
-        {/* Right Side - Content */}
-        <div className="blog-match-card-content">
-          <h2 className="blog-card-heading">
-            Pretoria Capitals vs Joburg Super Kings, SA20, Today Match Prediction
-          </h2>
-          <p className="blog-card-paragraph">
-          PC vs JSK Betting Tips and Match Analysis The SA20 2025 is heating up, and the Pretoria Capitals are in a do-or-die situation as they..          
-          </p>
-          <div className="blog-match-card-footer">1 view • 0 comments</div>
-        </div>
-      </div>
-      <div className="blog-match-card">
-        {/* Left Side - Image */}
-        <div className="blog-match-card-image">
-          <img
-            src={b3_img}
-            alt="Match Preview"
-          />
-          <div className="date-tag">28 JAN</div>
-          <div className="time-tag">9:00 PM</div>
-        </div>
-
-        {/* Right Side - Content */}
-        <div className="blog-match-card-content">
-          <h2 className="blog-card-heading">
-            Pretoria Capitals vs Joburg Super Kings, SA20, Today Match Prediction
-          </h2>
-          <p className="blog-card-paragraph">
-          PC vs JSK Betting Tips and Match Analysis The SA20 2025 is heating up, and the Pretoria Capitals are in a do-or-die situation as they..          
-          </p>
-          <div className="blog-match-card-footer">1 view • 0 comments</div>
-        </div>
-      </div>
-      <div className="blog-match-card">
-        {/* Left Side - Image */}
-        <div className="blog-match-card-image">
-          <img
-            src={b3_img}
-            alt="Match Preview"
-          />
-          <div className="date-tag">28 JAN</div>
-          <div className="time-tag">9:00 PM</div>
-        </div>
-
-        {/* Right Side - Content */}
-        <div className="blog-match-card-content">
-          <h2 className="blog-card-heading">
-            Pretoria Capitals vs Joburg Super Kings, SA20, Today Match Prediction
-          </h2>
-          <p className="blog-card-paragraph">
-          PC vs JSK Betting Tips and Match Analysis The SA20 2025 is heating up, and the Pretoria Capitals are in a do-or-die situation as they..          
-          </p>
-          <div className="blog-match-card-footer">1 view • 0 comments</div>
-        </div>
-      </div>
-    
-    
-   
+      ))}
     </div>
-    
   );
 };
 

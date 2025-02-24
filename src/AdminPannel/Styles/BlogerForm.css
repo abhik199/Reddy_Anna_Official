@@ -16,7 +16,8 @@
   }
   
   .blog-form input,
-  .blog-form textarea {
+  .blog-form textarea,
+  .blog-form select {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;

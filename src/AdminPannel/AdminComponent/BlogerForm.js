@@ -2,31 +2,32 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../AdminPannel/Styles/BlogerForm.css";
 
-const BlogForm = ({ onAddBlog }) => {
+const BlogForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
   const [date, setDate] = useState("");
+  const [category, setCategory] = useState("Cricket");
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("/blogs.json")
+    axios.get("http://localhost:5000/Blogs")
       .then(response => setBlogs(response.data))
       .catch(error => console.error("Error fetching blogs:", error));
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newBlog = { title, description, image, date };
-    const updatedBlogs = [...blogs, newBlog];
+    const newBlog = { title, description, image, date, category };
     
-    axios.post("/save-blogs", updatedBlogs)
-      .then(() => {
-        setBlogs(updatedBlogs);
+    axios.post("http://localhost:5000/Blogs", newBlog)
+      .then(response => {
+        setBlogs([...blogs, response.data]);
         setTitle("");
         setDescription("");
         setImage("");
         setDate("");
+        setCategory("Cricket");
       })
       .catch(error => console.error("Error saving blog:", error));
   };
@@ -60,6 +61,14 @@ const BlogForm = ({ onAddBlog }) => {
           onChange={(e) => setDate(e.target.value)}
           required
         />
+        <select value={category} onChange={(e) => setCategory(e.target.value)} required>
+          <option value="Cricket">Cricket</option>
+          <option value="Football">Football</option>
+          <option value="All Sports">All Sports</option>
+          <option value="Match Predictions">Match Predictions</option>
+          <option value="Tennis">Tennis</option>
+          <option value="Casino">Casino</option>
+        </select>
         <button type="submit">Add Blog</button>
       </form>
     </div>
