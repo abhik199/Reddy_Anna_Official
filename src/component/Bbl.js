@@ -4,10 +4,10 @@ import "../styles/IPLpage.css";
 
 const BBLPage = () => {
     return (
-      <div className="details-page">
+      <div className="blog-details-page">
         <h1>Big Bash League: A Comprehensive Overview of Australia's T20 Tournament - Reddy Anna</h1>
         <p>The Big Bash League (BBL) is Australia’s premier T20 cricket competition, captivating audiences with thrilling matches, star-studded line-ups, and a vibrant atmosphere. Launched in 2011, the BBL has quickly become a highlight of the Australian cricket calendar, attracting both local talent and international stars. This article will delve into the history, structure, teams, players, and betting opportunities associated with the Big Bash League, providing fans and bettors with comprehensive insights.</p>
-        <img src={bblimg} alt="IPL" className="card-image" />
+        <img src={bblimg} alt="IPL" />
 
         {/* Table of Contents */}
       <section className="table-of-contents">
@@ -202,7 +202,7 @@ const BBLPage = () => {
 
       <h2>Player Stats Overview</h2>
       <table>
-        <thead>
+      <thead>
           <tr>
             <th>Players</th>
             <th>Matches</th>

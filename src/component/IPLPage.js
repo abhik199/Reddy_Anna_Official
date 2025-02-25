@@ -4,10 +4,10 @@ import iplimg from "../image/ipll.avif";
 
 const IPLPage = () => {
   return (
-    <div className="details-page">
+    <div className="blog-details-page">
         <center><h1> Introduction to the Indian Premier League - Reddy Anna </h1></center>
         <p>The Indian Premier League (IPL) is one of the most prestigious and lucrative Twenty20 cricket leagues in the world. Launched in 2008 by the Board of Control for Cricket in India (BCCI), the IPL has transformed the landscape of cricket, combining sports with entertainment and business. Here’s a detailed look at the IPL, its inception, significance, and what makes it unique.</p>
-        <img src={iplimg} alt="IPL" className="card-image" />
+        <img src={iplimg} alt="IPL"  />
         <p>Discover the IPL's excitement, cricket betting opportunities, and insights with Reddy Anna for an enhanced viewing experience.</p>
         <section>
         <h2>1. Inception and Evolution</h2>

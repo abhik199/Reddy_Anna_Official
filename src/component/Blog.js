@@ -30,7 +30,7 @@ const Blog = () => {
       {/* Navigation Menu */}
       <nav className="blog-menu">
         <ul>
-          <li><button onClick={() => handleFilter("All Posts")}>All Posts</button></li>
+          <li className="blogmenu-li"><button onClick={() => handleFilter("All Posts")}>All Posts</button></li>
           <li><button onClick={() => handleFilter("Cricket")}>Cricket</button></li>
           <li><button onClick={() => handleFilter("Football")}>Football</button></li>
           <li><button onClick={() => handleFilter("All Sports")}>All Sports</button></li>

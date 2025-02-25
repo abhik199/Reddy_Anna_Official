@@ -4,10 +4,10 @@ import cplimg from "../image/cpll.avif";
 
 const CPLPage = () => {
     return (
-      <div className="details-page">
+      <div className="blog-details-page">
         <h1>Caribbean Premier League: A Deep Dive into the T20 Tournament - Reddy Anna</h1>
         <p>The Caribbean Premier League (CPL) has quickly established itself as one of the most exciting and entertaining T20 cricket tournaments globally, showcasing the vibrant culture and talent of the Caribbean. With a blend of local and international players, the CPL not only promotes cricket in the region but also offers ample opportunities for fans and bettors. In this article, we will explore the CPL's history, format, player performances, betting opportunities, and much more.</p>
-        <img src={cplimg} alt="IPL" className="card-image" />
+        <img src={cplimg} alt="IPL" />
         <section className="table-of-contents">
         <h2>Table of Contents</h2>
         <ol>
@@ -220,6 +220,7 @@ const CPLPage = () => {
       </ul>
       <h3>Player Stats Overview</h3>
     <table>
+        <thead>
         <tr>
             <th>Player</th>
             <th>Matches</th>
@@ -260,6 +261,7 @@ const CPLPage = () => {
             <td>142.00</td>
             <td>32.00</td>
         </tr>
+        </thead>
     </table>
     <section>
         <h2>5. Key Moments and Records</h2>
