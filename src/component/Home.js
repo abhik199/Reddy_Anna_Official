@@ -1,11 +1,14 @@
 import '../styles/Home.css';
+import { Link } from "react-router-dom";
+
+
 import home_img from "../image/img1.webp";
 import match1 from "../image/k1.png";
 import match2 from "../image/k2.png";
 import match3 from "../image/k3.png";
-import bet1 from "../image/p1.jpg";
-import bet2 from "../image/p2.jpg";
-import bet3 from "../image/p3.jpg";
+import bet1 from "../image/ipl.webp";
+import bet2 from "../image/bbl.webp";
+import bet3 from "../image/cpl.webp";
 
 const matches = [
     { title: "Durbar Rajshahi vs Sylhet Strikers, BPL, Reddy Anna Match Prediction", image: match1 },
@@ -13,9 +16,9 @@ const matches = [
     { title: "Australia vs England, AUS-W vs ENG-W, Today Match Prediction | Reddy Anna..", image: match3 },
   ];
   const betting = [
-    { title: "Introduction to the Indian Premier League - Reddy Anna .....", image: bet1 },
-    { title: " Big Bash League: A Comprehensive Overview of Australia's T20", image: bet2 },
-    { title: " Caribbean Premier League: A Deep Dive into the T20 Tournament.", image: bet3 },
+    { title: "Introduction to the Indian Premier League - Reddy Anna .....", image: bet1, details: "IPL details here..." },
+    { title: " Big Bash League: A Comprehensive Overview of Australia's T20", image: bet2, details: "BBL details here..." },
+    { title: " Caribbean Premier League: A Deep Dive into the T20 Tournament.", image: bet3,  details: "CPL details here..." },
   ];
 const Home = () =>
 {
@@ -84,6 +87,7 @@ const Home = () =>
         ))}
         </div>
 
+
         <center><h1> Reddy Anna Betting 101 </h1></center>
         <center><p>Read our blog for betting tips, tricks and Reddy Anna Tips and Tricks here.</p></center>
         <center>
@@ -91,15 +95,27 @@ const Home = () =>
             <a href="tel:7777857777" className="button">Reddy Anna blog</a>
           </div>
         </center>
-
         <div className="match-cards">
-        {betting.map((match, index) => (
-            <div className="card" key={index}>
-            <img src={match.image} alt={match.title} className="card-image" />
-            <div className="card-title">{match.title}</div>
-            </div>
-        ))}
+          <div className="card">
+            <Link to="/home/iplpage">
+              <img src={bet1} alt="IPL" className="card-image" />
+              <div className="card-title">Introduction to the Indian Premier League - Reddy Anna............</div>
+            </Link>
+          </div>
+          <div className="card">
+            <Link to="/home/bblpage">
+              <img src={bet2} alt="BBL" className="card-image" />
+              <div className="card-title">Big Bash League: A Comprehensive Overview of Australia's T20</div>
+            </Link>
+          </div>
+          <div className="card">
+            <Link to="/home/cplpage">
+              <img src={bet3} alt="CPL" className="card-image" />
+              <div className="card-title">Caribbean Premier League: A Deep Dive into the T20 Tournament</div>
+            </Link>
+          </div>
         </div>
+
         </div>
 
         <div className="success-container">

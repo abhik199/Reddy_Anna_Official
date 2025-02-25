@@ -1,131 +1,64 @@
-/* General Styles */
-
-.blog-container
-{
-    background-color: #fff;
+.details-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
-  .blog-menu {
-    max-width: 1000px;
-    margin: auto;
-    background: #fff;
+
+.details-page h1 {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.details-page h2 {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.details-page p {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.details-page ul {
+  
+  padding-left: 20px;
+}
+
+.details-page li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card-image {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .details-page {
     padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
-  .blog-menu ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
+
+  .details-page h1 {
+    font-size: 22px;
   }
-  
-  .blog-menu ul li {
-    margin: 0;
+
+  .details-page h2 {
+    font-size: 20px;
   }
-  
-  .blog-menu ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 15px;
-    font-family: sans-serif;
-    padding: 10px;
+
+  .details-page p {
+    font-size: 14px;
   }
-  
-  .blog-menu ul li a:hover {
-    color: #007bff;
-  }
-  
-  /* Match Card Container */
-  .blog-match-card {
-    display: flex;
-    flex-direction: row;
-    max-width: 950px;
-    background: #fff;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    gap: 15px;
-  }
-  
-  /* Left Image Section */
-  .match-card-image {
-    position: relative;
-    width: 50%;
-  }
-  
-  .blog-match-card-image img {
-    width: 350px;
-    height: 350px;
-    border-radius: 8px;
-  }
-  
-  .date-tag, .time-tag {
-    position: absolute;
-    background: white;
-    color: black;
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 4px;
-  }
-  
-  .date-tag {
-    top: 10px;
-    left: 10px;
-  }
-  
-  .time-tag {
-    top: 10px;
-    right: 10px;
-  }
-  
-  /* Right Content Section */
-  .blog-match-card-content {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .blog-card-heading {
-    font-size: 2.2rem;
-    color: #333;
-  }
-  
-  .blog-card-paragraph {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  .blog-match-card-footer {
-    font-size: 1.1rem;
-    color: gray;
-    margin-top: 10px;
-  }
-  
-  /* Responsive Design */
-  @media screen and (max-width: 768px) {
-    .blog-menu ul {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .blog-match-card {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .blog-match-card-image,
-    .blog-match-card-content {
-      width: 100%;
-    }
-  
-    .blog-match-card-content h2 {
-      font-size: 16px;
-    }
-  
-    .blog-match-card-content p {
-      font-size: 13px;
-    }
-  }
-  
+}

@@ -1,0 +1,47 @@
+.details-page{
+    max-width: 1000px;
+    margin: auto;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+}
+.details-page img{
+max-width: 900px;
+height: 650px;
+margin: auto;
+background-size: cover;
+margin-top: 20px;
+}
+.timeline-container {
+    width: 80%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background: #f4f4f4;
+    color: black;
+    font-weight: bold;
+  }
+  
+  td strong {
+    font-weight: bold;
+  }
+  
