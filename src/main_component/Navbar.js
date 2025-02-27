@@ -66,20 +66,6 @@ const Navbar = () => {
             )}
           </li>
 
-          {/* Platforms Dropdown */}
-          <li className="submenu-container">
-            <button className="submenu-toggle" onClick={() => toggleSubmenu("platforms")}>
-              Platforms ▾
-            </button>
-            {submenuOpen.platforms && (
-              <ul className="submenu">
-                <li><Link to="android">Android</Link></li>
-                <li><Link to="ios">iOS</Link></li>
-                <li><Link to="web">Web</Link></li>
-              </ul>
-            )}
-          </li>
-
           <li><Link to="about">About Us</Link></li>
           <li><Link to="sport">Sports ID</Link></li>
           <li><Link to="contact">Contact</Link></li>

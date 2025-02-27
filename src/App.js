@@ -24,6 +24,10 @@ import ProtectedRoute from "./AdminPannel/AdminComponent/ProtectedRoute";
 import BlogerForm from "./AdminPannel/AdminComponent/BlogerForm";
 import HomeBlogForm from "./AdminPannel/AdminComponent/HomeBlogFrom";
 import UserInfoTable from "./AdminPannel/AdminComponent/UserInfoTable";
+import IPLPage from "./component/IPLPage";
+import BBLPage from "./component/Bbl";
+import CPLPage from "./component/Cpl";
+
 
 
 const App =()=> {
@@ -35,6 +39,11 @@ const App =()=> {
               <Route path="/" element={<Layout/>}>
               <Route path="/" element={<Home/>}/> 
               <Route path="home" element={<Home/>}/> 
+{/* --------------------------blog details pages link----------------------- */}
+              <Route path="/home/iplpage" element={<IPLPage/>}/>
+              <Route path="/home/bblpage" element={<BBLPage/>}/>
+              <Route path="/home/cplpage" element={<CPLPage/>}/>
+
               <Route path="service" element={<Service/>}/>
               <Route path="about" element={<About/>}/>
               <Route path="sport" element={<Sport/>}/>
