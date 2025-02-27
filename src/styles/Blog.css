@@ -25,13 +25,13 @@
   
   .blog-menu ul li a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-size: 15px;
     font-family: sans-serif;
     padding: 10px;
   }
   
-  .blog-menu ul li a:hover {
+  .blogmenu-li:hover {
     color: #007bff;
   }
   

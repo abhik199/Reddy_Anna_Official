@@ -130,10 +130,7 @@ const Home = () =>
         <p>
           The tangible proof of winnings, combined with favorable reviews, solidifies <em>Reddy Anna</em>'s position as a reliable and rewarding platform in the competitive landscape of online gaming.
         </p>
-        {/* Testimonials Section */}
-        <div className="testimonials">
-          <img src="/testimonials.png" alt="User Testimonials" className="testimonials-img" />
-        </div>
+       
 
         {/* Contact Section */}
         <div className="contact-section">
